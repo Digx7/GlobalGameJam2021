@@ -52,12 +52,12 @@ public class Fish : MonoBehaviour
     private Vector2 horizontalInputProcessing(Vector2 input){
       Vector2 output = input;
 
-      if(output.x > 0.1) output.x *= forwardSpeedAdjuster;
-      else if(output.x < -0.1) output.x *= backwardSpeedAdjuster;
+      if(output.x > 0.1) output.x *= rightSpeedAdjuster;
+      else if(output.x < -0.1) output.x *= leftSpeedAdjuster;
       else output.x = 0;
 
-      if(output.y < -0.1) output.y *= leftSpeedAdjuster;
-      else if(output.y > 0.1) output.y *= rightSpeedAdjuster;
+      if(output.y < -0.1) output.y *= backwardSpeedAdjuster;
+      else if(output.y > 0.1) output.y *= forwardSpeedAdjuster;
       else output.y = 0;
 
       return output;
