@@ -24,6 +24,7 @@ public class Fish : MonoBehaviour
       Vector3 locVel = transform.InverseTransformDirection(rb.velocity);
       locVel.x = _input.x * Time.deltaTime;
       locVel.z = _input.y * Time.deltaTime;
+      locVel.y = 0.0f;
       rb.velocity = transform.TransformDirection(locVel);
 
       //rb.velocity = new Vector3(_input.x, 0, _input.y) * Time.deltaTime;
@@ -31,6 +32,8 @@ public class Fish : MonoBehaviour
 
     public void moveFishVertical(float input){
       Vector3 locVel = transform.InverseTransformDirection(rb.velocity);
+      locVel.x = 0.0f;
+      locVel.z = 0.0f;
       locVel.y = verticalMovementProcessing(input) * Time.deltaTime;
       rb.velocity = transform.TransformDirection(locVel);
 
